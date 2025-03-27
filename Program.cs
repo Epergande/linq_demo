@@ -60,7 +60,7 @@ Console.WriteLine(characterDTO.Display());
 
 
  // how many characters in total (all series)?
- int CharacterCount = characters.Count();
+ /*int CharacterCount = characters.Count();
  Console.WriteLine($"There are {CharacterCount} characters in all series");
  // how many characters appear in the Mario series?
  int MarioCount = characters.Where(c => c.Series.Contains("Mario")).Count();
@@ -75,7 +75,12 @@ Console.WriteLine(characterDTO.Display());
  foreach(String? name in characters.Where(c => c.Series.Contains("Donkey Kong") && c.Series.Contains("Mario")).Select(c => c.Name))
  {
    Console.WriteLine($"\t{name}");
- }
+ }*/
  // how many characters appear in Donkey Kong and not in Mario?
- int DkNotMarioCount = characters.Where(c => c.Series.Contains("Donkey Kong") && !c.Series.Contains("Mario")).Count();
- Console.WriteLine($"There are {DkNotMarioCount} characters that appear in Donkey Kong and Not in Mario series");
+// int DkNotMarioCount = characters.Where(c => c.Series.Contains("Donkey Kong") && !c.Series.Contains("Mario")).Count();
+ // Console.WriteLine($"There are {DkNotMarioCount} characters that appear in Donkey Kong and Not in Mario series");
+ 
+ // which character(s) has/have the most alias's?
+ foreach(var obj in characters.Where(c => c.Alias.Count() == characters.Max(c => c.Alias.Count())).Select(c => new {c.Name, c.Alias})){
+   Console.WriteLine($"{obj.Name} has {obj.Alias.Count()} alias(s):\n\t{String.Join(", ", obj.Alias)}");
+ }
