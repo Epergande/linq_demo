@@ -18,17 +18,21 @@
  
  // display first character
  //Console.WriteLine(characters.First().Display());
- // Console.WriteLine(characters.First().Display());
  
  // display the first 5 characters
  //foreach(Character character in characters.Take(5))
- // foreach(Character character in characters.Take(5))
  // {
  //   Console.WriteLine(character.Display());
  // }
  
  // display every character except the first 5
- foreach(Character character in characters.Skip(5))
+ // foreach(Character character in characters.Skip(5))
+ // {
+ //   Console.WriteLine(character.Display());
+ // }
+ 
+ // display characters 6-10
+ foreach(Character character in characters.Skip(5).Take(5))
  {
    Console.WriteLine(character.Display());
  }
