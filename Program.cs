@@ -1,4 +1,5 @@
-﻿﻿using System.Text.Json;
+﻿﻿using System.Reflection.Metadata.Ecma335;
+using System.Text.Json;
  
  // deserialize mario json from file into List<Mario>
  List<Character> dks = JsonSerializer.Deserialize<List<Character>>(File.ReadAllText("dk.json"))!;
@@ -100,4 +101,12 @@
      Console.WriteLine($"\t{character.Name}");
    }
  }*/
-Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1981)}");
+ //[1.19a] How many character(s) were created in 1981 (all series)?
+//Console.WriteLine($"How many? {characters.Count(c => c.YearCreated == 1981)}");
+
+//[1.19b] List the character(s) created in that 1981 (all series) -
+//return character name and series only.
+foreach (var obj in characters.Where(c => c.YearCreated == 1981))
+  {
+   Console.WriteLine($"\t{obj.Name },{obj.Series}");
+  }
