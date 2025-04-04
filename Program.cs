@@ -106,7 +106,9 @@ using System.Text.Json;
 
 //[1.19b] List the character(s) created in that 1981 (all series) -
 //return character name and series only.
-foreach (var obj in characters.Where(c => c.YearCreated == 1981))
-  {
-   Console.WriteLine($"\t{obj.Name },{obj.Series}");
-  }
+//foreach (var obj in characters.Where(c => c.YearCreated == 1981))
+  //{
+ //  Console.WriteLine($"\t{obj.Name },{obj.Series}");
+//  }
+//[1.19c] How many character(s) were created in 1981 (Mario series)?
+//Console.WriteLine($"{marios.Count(c => c.YearCreated == 1981)}");
