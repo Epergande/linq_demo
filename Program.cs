@@ -112,3 +112,9 @@ using System.Text.Json;
 //  }
 //[1.19c] How many character(s) were created in 1981 (Mario series)?
 //Console.WriteLine($"{marios.Count(c => c.YearCreated == 1981)}");
+
+//[1.19d] List the character(s) created in that 1981 (Mario series) - return character name only.
+  foreach(CharacterDTO characterDTO in marios.Where(c => c.YearCreated == 1981).Select(c => new CharacterDTO{ Id = c.Id, Name = c.Name, Series = c.Series }).OrderBy(c => c.Name))
+  {
+   Console.WriteLine(characterDTO.Display());
+  }
